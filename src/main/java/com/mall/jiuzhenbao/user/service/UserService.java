@@ -9,7 +9,7 @@ import com.mall.jiuzhenbao.user.domain.User;
  */
 public interface UserService {
     public User login(String username, String password);
-    public void logout();
+//    public void logout();
     public User save(User user);
     public User findByUsername(String username);
     public User update(User user);

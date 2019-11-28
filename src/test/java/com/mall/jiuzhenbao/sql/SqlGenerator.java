@@ -96,7 +96,7 @@ public class SqlGenerator {
     public static void main(String[] args){
         String[] classes = new String[]{"com.mall.jiuzhenbao.user.domain.User", "com.mall.jiuzhenbao.address.domain.Address", "com.mall.jiuzhenbao.bankcard.domain.BankCard", "com.mall.jiuzhenbao.coupon.domain.Coupon", "com.mall.jiuzhenbao.delivery.domain.Delivery", "com.mall.jiuzhenbao.goods.domain.Goods", "com.mall.jiuzhenbao.income.domain.Income", "com.mall.jiuzhenbao.order.domain.Order"};
         generateSql("com.mall.jiuzhenbao.user.domain.User", "user", "user_id", "D:\\gaowei\\Ebook\\sql\\user.txt");
-        generateSql("com.mall.jiuzhenbao.address.domain.Address", "user", "address_id", "D:\\gaowei\\Ebook\\sql\\address.txt");
+        generateSql("com.mall.jiuzhenbao.address.domain.Address", "address", "address_id", "D:\\gaowei\\Ebook\\sql\\address.txt");
         generateSql("com.mall.jiuzhenbao.bankcard.domain.BankCard", "bank_card", "card_id", "D:\\gaowei\\Ebook\\sql\\bankcard.txt");
         generateSql("com.mall.jiuzhenbao.coupon.domain.Coupon", "coupon", "user_id", "D:\\gaowei\\Ebook\\sql\\coupon.txt");
         generateSql("com.mall.jiuzhenbao.delivery.domain.Delivery", "delievery", "delivery_id", "D:\\gaowei\\Ebook\\sql\\delivery.txt");
