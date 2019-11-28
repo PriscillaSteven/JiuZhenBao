@@ -37,15 +37,6 @@ public class User implements Serializable {
     @Column(name="create_by")
     private String createBy;
 
-//    @Column(name="buy_level", nullable=false)
-//    private int buyLevel;
-//
-//    @Column(name="consume_level", nullable=false)
-//    private int consume_level;
-//
-//    @Column(name="team_level", nullable=false)
-//    private int team_level;
-
     @Column(name="invite_id", nullable = false)
     private String inviteId;
 
