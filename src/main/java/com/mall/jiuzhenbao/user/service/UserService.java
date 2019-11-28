@@ -8,6 +8,7 @@ import com.mall.jiuzhenbao.user.domain.User;
  * @version 0.0.1
  */
 public interface UserService {
+//    public User register(String username, String password, String phone);
     public User login(String username, String password);
 //    public void logout();
     public User save(User user);
