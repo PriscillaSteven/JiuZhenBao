@@ -46,6 +46,9 @@ public class User implements Serializable {
 //    @Column(name="team_level", nullable=false)
 //    private int team_level;
 
+    @Column(name="invite_id", nullable = false)
+    private String inviteId;
+
     @Column(name="member_level", nullable = false)
     private int memberLevel;
 
@@ -162,6 +165,14 @@ public class User implements Serializable {
 
     public void setCreateBy(String createBy) {
         this.createBy = createBy;
+    }
+
+    public String getInviteId() {
+        return inviteId;
+    }
+
+    public void setInviteId(String inviteId) {
+        this.inviteId = inviteId;
     }
 
     public int getMemberLevel() {
