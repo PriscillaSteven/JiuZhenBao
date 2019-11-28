@@ -26,8 +26,8 @@ public class UserServiceImpl implements UserService {
 
 	public User save(User user){
 		if(user != null){
-			user.setCreateTime(new Date());
-			user.setModifyTime(new Date());
+//			user.setCreateTime(new Date());
+//			user.setModifyTime(new Date());
 			return userRep.save(user);
 		}
 		return null;

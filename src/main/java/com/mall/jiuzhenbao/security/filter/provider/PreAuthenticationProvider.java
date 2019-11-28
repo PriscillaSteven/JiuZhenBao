@@ -1,6 +1,7 @@
 package com.mall.jiuzhenbao.security.filter.provider;
 
 import com.mall.jiuzhenbao.security.dto.UserContext;
+import com.mall.jiuzhenbao.user.domain.User;
 import com.mall.jiuzhenbao.user.dto.UserDTO;
 import com.mall.jiuzhenbao.user.service.UserService;
 import org.slf4j.Logger;
@@ -39,13 +40,16 @@ public class PreAuthenticationProvider implements AuthenticationProvider {
         String username = (String) authentication.getPrincipal();
         logger.debug("{} login request", username);
         String password = (String) authentication.getCredentials();
-        UserDTO user = userService.login(username, password)
-				.orElseThrow(() -> new BadCredentialsException(
-						"Authentication Failed. Username or Password not valid."));
+//        UserDTO user = userService.login(username, password)
+//				.orElseThrow(() -> new BadCredentialsException(
+//						"Authentication Failed. Username or Password not valid."));
+        User user = userService.login(username, password);
         String orgType  = null;
 
-		UserContext userContext = UserContext.create(user.getUserId(),
-				user.getEmail(), user.getRoleId(), orgType,userService.isFirstLogin(user.getUserId()));
+//		UserContext userContext = UserContext.create(user.getUserId(),
+//				user.getEmail(), user.getRoleId(), orgType,userService.isFirstLogin(user.getUserId()));
+        UserContext userContext = UserContext.create(user.getUserId(),
+                "", "", orgType, true);
         return new UsernamePasswordAuthenticationToken(userContext, null, null);
     }
     

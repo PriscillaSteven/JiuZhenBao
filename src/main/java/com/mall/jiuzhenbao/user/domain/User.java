@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User extends BaseEntity implements Serializable {
+public class User implements Serializable {
     @Id
     @Column(name="user_id", nullable=false)
     private String userId;

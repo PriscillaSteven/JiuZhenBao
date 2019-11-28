@@ -30,22 +30,6 @@ public class UserResource {
         return new LoginResponse();
     }
 
-    @GET
-    @Path("/operate/{userId}/{username}/{password}")
-    public Object getInfo(@PathParam("userId") String userId, @PathParam("username") String username, @PathParam("password") String password){
-        User user = new User();
-        user.setUserId(userId);
-        user.setUsername(username);
-        user.setPassword(password);
-        String msg = userService.getInfo(user);
-        if(msg != null){
-           Map<String, String> map = new HashMap<>();
-           map.put("msg", msg);
-           return map;
-        }
-        return null;
-    }
-
     @POST
     @Path("/admin/settings")
     public void loginSetting(User user){
