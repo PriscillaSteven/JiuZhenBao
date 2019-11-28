@@ -2,7 +2,6 @@ package com.mall.jiuzhenbao.user.domain;
 
 import com.mall.jiuzhenbao.address.domain.Address;
 import com.mall.jiuzhenbao.bankcard.domain.BankCard;
-import com.mall.jiuzhenbao.base.domain.BaseEntity;
 import com.mall.jiuzhenbao.coupon.domain.Coupon;
 
 import javax.persistence.*;

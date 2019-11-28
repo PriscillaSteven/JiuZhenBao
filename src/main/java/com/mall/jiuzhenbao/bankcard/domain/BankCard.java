@@ -16,6 +16,12 @@ public class BankCard implements Serializable {
     @Column(name="card_name", nullable = false)
     private String cardName;
 
+    @Column(name="card_number", nullable = false)
+    private String cardNumber;
+
+    @Column(name="type", nullable = false)
+    private int type;
+
     @Column(name="owner_id", nullable = false)
     private String ownerId;
 
@@ -33,6 +39,22 @@ public class BankCard implements Serializable {
 
     public void setCardName(String cardName) {
         this.cardName = cardName;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 
     public String getOwnerId() {
