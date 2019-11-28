@@ -19,6 +19,9 @@ public class BankCard implements Serializable {
     @Column(name="card_number", nullable = false)
     private String cardNumber;
 
+    @Column(name="photo_url", nullable=false)
+    private String photoUrl;
+
     @Column(name="type", nullable = false)
     private int type;
 
@@ -47,6 +50,14 @@ public class BankCard implements Serializable {
 
     public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 
     public int getType() {
