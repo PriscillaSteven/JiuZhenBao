@@ -1,4 +1,4 @@
-package com.mall.jiuzhenbao.user.domain;
+package com.mall.jiuzhenbao.bankcard.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

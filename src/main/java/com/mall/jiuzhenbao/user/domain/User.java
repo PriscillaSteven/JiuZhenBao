@@ -1,6 +1,9 @@
 package com.mall.jiuzhenbao.user.domain;
 
+import com.mall.jiuzhenbao.address.domain.Address;
+import com.mall.jiuzhenbao.bankcard.domain.BankCard;
 import com.mall.jiuzhenbao.base.domain.BaseEntity;
+import com.mall.jiuzhenbao.coupon.domain.Coupon;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,6 +22,9 @@ public class User extends BaseEntity implements Serializable {
     @Column(name="user_name", length=128)
     private String username;
 
+    @Column(name="nick_name", length=128)
+    private String nickName;
+
     @Column(name="password", length=128, nullable=false)
     private String password;
 
@@ -31,14 +37,23 @@ public class User extends BaseEntity implements Serializable {
     @Column(name="create_by")
     private String createBy;
 
-    @Column(name="buy_level", nullable=false)
-    private int buyLevel;
+//    @Column(name="buy_level", nullable=false)
+//    private int buyLevel;
+//
+//    @Column(name="consume_level", nullable=false)
+//    private int consume_level;
+//
+//    @Column(name="team_level", nullable=false)
+//    private int team_level;
 
-    @Column(name="consume_level", nullable=false)
-    private int consume_level;
+    @Column(name="member_level", nullable = false)
+    private int memberLevel;
 
-    @Column(name="team_level", nullable=false)
-    private int team_level;
+    @Column(name="partner_level", nullable = false)
+    private int partnerLevel;
+
+    @Column(name="discount_level", nullable = false)
+    private int discountLevel;
 
     @Column(name="remaining_bean", nullable=false)
     private int remainingBean;
@@ -55,8 +70,17 @@ public class User extends BaseEntity implements Serializable {
     @Column(name="is_valid", nullable=false)
     private boolean isValid;
 
+    @Column(name="is_valid_member", nullable = false)
+    private boolean isValidMember;
+
     @Column(name="register_date", nullable=false)
     private Date registerDate;
+
+    @Column(name="district")
+    private String district;
+
+    @Column(name="detailed_address")
+    private String detailedAddress;
 
     @Column(name="is_deleted")
     private boolean isDeleted = false;
@@ -74,6 +98,16 @@ public class User extends BaseEntity implements Serializable {
 
     private List<Coupon> coupons;
 
+    private List<Address> addresses;
+
+    private List<User> directUppers;
+
+    private List<User> directDowners;
+
+    private int directDownerCount;
+
+    private Date latestVisitTime;
+
     public String getUserId() {
         return userId;
     }
@@ -88,6 +122,14 @@ public class User extends BaseEntity implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getPassword() {
@@ -122,28 +164,28 @@ public class User extends BaseEntity implements Serializable {
         this.createBy = createBy;
     }
 
-    public int getBuyLevel() {
-        return buyLevel;
+    public int getMemberLevel() {
+        return memberLevel;
     }
 
-    public void setBuyLevel(int buyLevel) {
-        this.buyLevel = buyLevel;
+    public void setMemberLevel(int memberLevel) {
+        this.memberLevel = memberLevel;
     }
 
-    public int getConsume_level() {
-        return consume_level;
+    public int getPartnerLevel() {
+        return partnerLevel;
     }
 
-    public void setConsume_level(int consume_level) {
-        this.consume_level = consume_level;
+    public void setPartnerLevel(int partnerLevel) {
+        this.partnerLevel = partnerLevel;
     }
 
-    public int getTeam_level() {
-        return team_level;
+    public int getDiscountLevel() {
+        return discountLevel;
     }
 
-    public void setTeam_level(int team_level) {
-        this.team_level = team_level;
+    public void setDiscountLevel(int discountLevel) {
+        this.discountLevel = discountLevel;
     }
 
     public int getRemainingBean() {
@@ -186,12 +228,36 @@ public class User extends BaseEntity implements Serializable {
         isValid = valid;
     }
 
+    public boolean isValidMember() {
+        return isValidMember;
+    }
+
+    public void setValidMember(boolean validMember) {
+        isValidMember = validMember;
+    }
+
     public Date getRegisterDate() {
         return registerDate;
     }
 
     public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getDetailedAddress() {
+        return detailedAddress;
+    }
+
+    public void setDetailedAddress(String detailedAddress) {
+        this.detailedAddress = detailedAddress;
     }
 
     public boolean isDeleted() {
@@ -240,6 +306,46 @@ public class User extends BaseEntity implements Serializable {
 
     public void setCards(Set<BankCard> cards) {
         this.cards = cards;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public List<User> getDirectUppers() {
+        return directUppers;
+    }
+
+    public void setDirectUppers(List<User> directUppers) {
+        this.directUppers = directUppers;
+    }
+
+    public List<User> getDirectDowners() {
+        return directDowners;
+    }
+
+    public void setDirectDowners(List<User> directDowners) {
+        this.directDowners = directDowners;
+    }
+
+    public int getDirectDownerCount() {
+        return directDownerCount;
+    }
+
+    public void setDirectDownerCount(int directDownerCount) {
+        this.directDownerCount = directDownerCount;
+    }
+
+    public Date getLatestVisitTime() {
+        return latestVisitTime;
+    }
+
+    public void setLatestVisitTime(Date latestVisitTime) {
+        this.latestVisitTime = latestVisitTime;
     }
 
     @Override
