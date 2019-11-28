@@ -20,4 +20,6 @@ public interface UserRepository extends JpaRepository<User, String>, JpaSpecific
     public User getLoginUser();
 
     public List<User> findByUsername(String username);
+
+    public User update(User user);
 }

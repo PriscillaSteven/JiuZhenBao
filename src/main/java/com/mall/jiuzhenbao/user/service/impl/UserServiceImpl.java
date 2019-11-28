@@ -48,4 +48,8 @@ public class UserServiceImpl implements UserService {
 	public User update(User user){
 		return userRep.update(user);
 	}
+
+	public String logOut(User user){
+		return "SUCCESS";
+	}
 }
